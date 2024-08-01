@@ -56,16 +56,28 @@ Create 2 folder in your project direcrory static and  templates
 1. Upload an image using the provided form.
 2. The app will detect the face, predict the emotion, and display the results.
 EmotionDetection/
+
 │
+
 ├── static/
+
 │
+
 ├── templates/
+
 │   ├── after.html
+
 │   ├── index.html
+
 │
+
 ├── app.py
+
 ├── deploy.prototxt  # Download from Google
+
 ├── haarcascade_frontalface_default.xml  # Download from Google
+
 ├── res10_300x300_ssd_iter_140000.caffemodel  # Download from Google
+
 └── ResNet50_Transfer_Learning.keras  # Train the model and save
 
