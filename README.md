@@ -113,7 +113,7 @@ If you'd like to train your own model:
 
 ## 📷 Screenshots
 
-![Result Page](virat_page.png)
+![Result Page](Virat.jpg)
 
 ---
 
