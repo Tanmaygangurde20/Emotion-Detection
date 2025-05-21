@@ -1,83 +1,126 @@
-# Emotion Detection Flask App
-
-This is a Flask-based web application that detects human emotions from images using a pre-trained ResNet50 model for transfer learning.
 
 
-## Features
+# 😊 Emotion Detection Flask App
 
-- Upload an image and detect the emotion of the person in the image.
-- Uses OpenCV for face detection.
-- Utilizes a pre-trained ResNet50 model for emotion classification.
+A Flask-based web application that detects human emotions from uploaded images using OpenCV for face detection and a pre-trained ResNet50 model (via transfer learning) for emotion classification. This project aims to demonstrate how deep learning and web development can be combined to build intelligent applications.
 
-## Requirements
+---
 
-- Python 3.8+
-- Flask
-- OpenCV
-- NumPy
-- TensorFlow
+## 🔥 Features
 
-## Installation
+* 🎭 Detects emotions such as Happy, Sad, Angry, Neutral, etc. from a face in the uploaded image.
+* 📷 Uses OpenCV for accurate and real-time face detection.
+* 🤖 Employs ResNet50-based deep learning model trained via transfer learning for emotion classification.
+* 🌐 Simple and interactive web interface built with Flask and HTML/CSS.
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/emotion-detection-flask-app.git
-    cd emotion-detection-flask-app
-    ```
+---
 
-2. Create and activate a virtual environment (optional but recommended):
-    ```sh
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    ```
+## 📁 Project Structure
 
-3. Install the required libraries:
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-4. Download the required models and place them in the root directory:
-    - [ResNet50 Transfer Learning Model](link-to-model)
-    - [OpenCV Face Detection Model](link-to-model)
-    - Ensure you have `deploy.prototxt` and `res10_300x300_ssd_iter_140000.caffemodel` in the root directory.
-
-## Running the App
-
-1. Start the Flask server:
-    ```sh
-    python app.py
-    ```
-
-2. Open your web browser and go to `http://127.0.0.1:5000/`.
-
-## Usage
-Create 2 folder in your project direcrory static and  templates
-
-1. Upload an image using the provided form.
-2. The app will detect the face, predict the emotion, and display the results.
+```
 EmotionDetection/
-
 │
-
-├── static/
-
+├── static/                       # Contains static files like CSS
 │
-
-├── templates/
-
-│   ├── after.html
-
-│   ├── index.html
-
+├── templates/                   # HTML templates
+│   ├── index.html               # Upload page
+│   └── after.html               # Result display page
 │
+├── app.py                       # Flask application
+├── requirements.txt             # Python dependencies
+│
+├── deploy.prototxt              # Face detection config file
+├── res10_300x300_ssd_iter_140000.caffemodel   # Face detection model
+├── haarcascade_frontalface_default.xml        # Alternative face detection model (optional)
+├── ResNet50_Transfer_Learning.keras           # Trained ResNet50 model
+└── README.md                    # This file
+```
 
-├── app.py
+---
 
-├── deploy.prototxt  # Download from Google
+## 🛠️ Installation
 
-├── haarcascade_frontalface_default.xml  # Download from Google
+### ✅ Prerequisites
 
-├── res10_300x300_ssd_iter_140000.caffemodel  # Download from Google
+* Python 3.8+
+* `pip` for installing packages
 
-└── ResNet50_Transfer_Learning.keras  # Train the model and save
+### 📦 Setup Instructions
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/Tanmaygangurde20/emotion-detection-flask-app.git
+   cd emotion-detection-flask-app
+   ```
+
+2. **Create and Activate a Virtual Environment** *(Optional but Recommended)*:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate     # On Windows, use `venv\Scripts\activate`
+   ```
+
+3. **Install Required Libraries**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Download Required Models**:
+
+   Place the following files in the project root directory:
+
+   * `deploy.prototxt` – [Download Link](https://github.com/opencv/opencv/blob/master/samples/dnn/face_detector/deploy.prototxt)
+   * `res10_300x300_ssd_iter_140000.caffemodel` – [Download Link](https://github.com/opencv/opencv/blob/master/samples/dnn/face_detector/res10_300x300_ssd_iter_140000.caffemodel)
+   * `ResNet50_Transfer_Learning.keras` – Your trained emotion detection model using ResNet50
+
+---
+
+## 🚀 Running the App
+
+Start the Flask development server:
+
+```bash
+python app.py
+```
+
+Open your browser and visit:
+📍 [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+
+---
+
+## 👨‍🔬 How It Works
+
+1. User uploads an image.
+2. OpenCV detects the face region using pre-trained DNN model.
+3. The detected face is passed to the ResNet50 model.
+4. Model predicts the emotion label.
+5. Result is displayed with the predicted emotion and the face image.
+
+---
+
+## 🧠 Model Training (Optional)
+
+If you'd like to train your own model:
+
+* Use a dataset like [FER2013](https://www.kaggle.com/datasets/msambare/fer2013) or similar.
+* Apply data preprocessing (resizing, normalization).
+* Use TensorFlow/Keras with ResNet50 base and a custom dense classifier.
+* Save the model as `.keras` and place it in the root directory.
+
+---
+
+## 📷 Screenshots
+
+![Result Page](virat_page.png)
+
+---
+
+## 📄 License
+
+This project is for educational purposes. You are free to use, modify, and distribute it with credit.
+
+---
+
 
